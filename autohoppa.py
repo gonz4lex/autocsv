@@ -3,13 +3,10 @@ import pandas as pd
 import numpy as np
 import time
 
-df = pd.concat([pd.read_csv(f) for f in glob.glob('input\\*_Hoppa_TransferOnly_Regular_*.csv')],
+df = pd.concat([pd.read_csv(f) for f in glob.glob('input\\idealista_csv_*.csv')],
                 ignore_index = True)
 
-df = df[df['MESSAGE'].isnull()]
-
-
-df.to_csv(".\\output\\FULL_Hoppa_TransferOnly_Regular_" 
+df.to_csv(".\\output\\FULL_Idealista_" 
             + time.strftime("%Y%m%d%H%M") 
             + ".csv",
             index = False,
